@@ -1,13 +1,151 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <title>Frontend Mentor | Product preview card component</title>
+  <style>
+
+    :root {
+      --color-white: #fff;
+      --color-cream: #F2EAE2;
+      --color-aurometal-aurus: #6C7289;
+      --color-deep-aquamarine: #3D8168;
+      --color-deep-aquamarine-hover: #1A4032;
+      --color-gunmetal: #1C232B;
+    }
+
+    body {
+      background-color: var(--color-cream);
+      margin: 0;
+    }
+
+    .card {
+      width: 343px;
+      margin: 1.5rem auto;
+      border-radius: 10px;
+      background-color: var(--color-white);
+      overflow: hidden;;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .product-category {
+      color: var(--color-aurometal-aurus);
+      text-transform: uppercase;
+      margin-bottom: .75rem;
+    }
+
+    .product-title {
+      margin-bottom: 1rem;
+    }
+
+    .product-description {
+      color: var(--color-aurometal-aurus);
+      margin-bottom: 1.5rem;
+    }
+
+    .product-price-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .product-price {
+      color: var(--color-deep-aquamarine);
+    }
+
+    .product-price-prev {
+      color: var(--color-aurometal-aurus);
+      text-decoration: line-through;
+    }
+
+    .btn-add-to-card {
+      width: 100%;
+      padding: 1rem 0;
+      border: none;
+      border-radius: 8px;
+      background-color: var(--color-deep-aquamarine);
+      color: var(--color-white);
+      cursor: pointer;
+    }
+    .btn-add-to-card:hover {
+      background-color: var(--color-deep-aquamarine-hover);
+    }
+    .btn-add-to-card::before {
+      content: url(images/icon-cart.svg);
+      margin-right: .75rem;
+    }
+
+    .typography-display {
+      font-family: "Fraunces", serif;
+      font-weight: 700;
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+
+    .typography-overline {
+      font-family: "Montserrat", sans-serif;
+      font-size: .75rem;
+      letter-spacing: 5px;
+    }
+
+    .typography-body, body {
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      line-height: 23px;
+    }
+
+    .typography-button, button {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 14px;      
+    }
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <picture class="product-image">
+       <source srcset="images/image-product-desktop.jpg" media="(min-width: 1024px)">
+       <source srcset="images/image-product-mobile.jpg" media="(max-width: 1024px)">
+       <img class="card-image" src="images/image-product-desktop.jpg" />
+    </picture>
+    <div class="card-content">
+      <div class="product-category typography-overline">Perfume</div>
+
+      <div class="product-title typography-display">Gabrielle Essence Eau De Parfum</div>
+
+      <div class="product-description">
+        A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+        Perfumer-Creator for the House of CHANEL.
+      </div>
+
+      <div class="product-price-row">
+        <div class="product-price typography-display">
+          $149.99
+        </div>
+        <div class="product-price-prev">
+          $169.99
+        </div>
+      </div>
+
+      <button class="btn-add-to-card">Add to Cart</button>
+    </div>
+  </div>
+</body>
 </html>
