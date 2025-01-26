@@ -29,17 +29,27 @@
     }
 
     .card {
+      display: flex;
+      flex-direction: column;
       width: 343px;
       margin: 1.5rem auto;
       border-radius: 10px;
       background-color: var(--color-white);
-      overflow: hidden;;
+      overflow: hidden;
+    }
+
+    .card-image {
+      display: block;
+      object-fit: cover;
+      width: 100%;
     }
 
     .card-content {
       padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
     }
-
+    
     .product-category {
       color: var(--color-aurometal-aurus);
       text-transform: uppercase;
@@ -79,6 +89,7 @@
       background-color: var(--color-deep-aquamarine);
       color: var(--color-white);
       cursor: pointer;
+      margin-top: auto;
     }
     .btn-add-to-card:hover {
       background-color: var(--color-deep-aquamarine-hover);
@@ -113,17 +124,29 @@
       font-size: 14px;      
     }
 
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    @media screen and (min-width: 1024px) {
+      .card {
+        flex-direction: row;;
+        width: 600px;
+        height: 450px;
+      }      
+      .card-content {
+        padding: 2rem;
+      }
+      .card-image {
+        width: 300px;
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
 
   <div class="card">
     <picture class="product-image">
-       <source srcset="images/image-product-desktop.jpg" media="(min-width: 1024px)">
-       <source srcset="images/image-product-mobile.jpg" media="(max-width: 1024px)">
-       <img class="card-image" src="images/image-product-desktop.jpg" />
+       <source srcset="images/image-product-mobile.jpg" media="(max-width: 1023px)" type="image/png" />
+       <source srcset="images/image-product-desktop.jpg" media="(min-width: 1024px)" type="image/png" />
+       <img class="card-image" src="images/image-product-mobile.jpg" alt="" />
     </picture>
     <div class="card-content">
       <div class="product-category typography-overline">Perfume</div>
