@@ -91,13 +91,12 @@
       color: var(--color-white);
       cursor: pointer;
       margin-top: auto;
+      display: flex;
+      justify-content: center;;
+      gap: .75rem;
     }
     .btn-add-to-card:hover {
       background-color: var(--color-deep-aquamarine-hover);
-    }
-    .btn-add-to-card::before {
-      content: url(images/icon-cart.svg);
-      margin-right: .75rem;
     }
 
     .typography-display {
@@ -187,7 +186,10 @@
         </div>
       </div>
 
-      <button class="btn-add-to-card">Add to Cart</button>
+      <button class="btn-add-to-card">
+        <img class="btn-card-icon" src="images/icon-cart.svg" alt="Add to cart" />
+        Add to Cart
+      </button>
     </div>
   </main>
 </body>
